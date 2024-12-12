@@ -4,8 +4,8 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  const handleAddTask = (e) => {
-    if (e.key === 'Enter' && newTask.trim()) {
+  const handleAddTask = (event) => {
+    if (event.key === 'Enter' && newTask.trim()) {
       setTasks([...tasks, newTask]);
       setNewTask('');
     }
@@ -22,7 +22,7 @@ const TodoList = () => {
       <input
         type="text"
         value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
+        onChange={(event) => setNewTask(event.target.value)}
         onKeyDown={handleAddTask}
         placeholder="Nueva tarea"
       />
@@ -34,8 +34,8 @@ const TodoList = () => {
             <li
               key={index}
               style={{ position: 'relative', padding: '5px 0' }}
-              onMouseEnter={(e) => e.currentTarget.querySelector('button').style.display = 'inline'}
-              onMouseLeave={(e) => e.currentTarget.querySelector('button').style.display = 'none'}
+              onMouseEnter={(event) => event.currentTarget.querySelector('button').style.display = 'inline'}
+              onMouseLeave={(event) => event.currentTarget.querySelector('button').style.display = 'none'}
             >
               {task}
               <button
