@@ -18,7 +18,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <h1>Lista de quehaceres</h1>
+      <h1>Lista de tareas</h1>
       <input
         type="text"
         value={newTask}
